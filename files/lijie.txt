@@ -1,0 +1,17 @@
+POM知识点：
+--项目中引用第三方提供的jar包（私服拉取不到）？将第三方jar包打入项目jar包中？
+----最简方式：在项目中新建lib目录，将第三方jar包放在lib下，pom中引入依赖，并在plugin中加入<includeSystemScope>true</includeSystemScope>
+        <dependency>
+            <groupId>com.ncyra</groupId>
+            <artifactId>jna-4.5.1</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/jna-4.5.1.jar</systemPath>
+            <version>4.5.1</version>
+        </dependency>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+               <includeSystemScope>true</includeSystemScope>
+            </configuration>
+         </plugin>
