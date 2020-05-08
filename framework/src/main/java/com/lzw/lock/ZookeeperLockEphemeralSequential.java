@@ -11,13 +11,13 @@ import java.util.concurrent.CountDownLatch;
  * @Date: 2020/5/8 15
  * @Description:
  */
-public class ZookeeperLockTemporaryOrder extends ZookeeperAbstractLock {
+public class ZookeeperLockEphemeralSequential extends ZookeeperAbstractLock {
     private CountDownLatch countDownLatch= null;
 
     private String beforePath;//当前请求的节点前一个节点
     private String currentPath;//当前请求的节点
 
-    public ZookeeperLockTemporaryOrder() {
+    public ZookeeperLockEphemeralSequential() {
         if (!this.zkClient.exists(PATH2)) {
             this.zkClient.createPersistent(PATH2);
         }
@@ -49,14 +49,12 @@ public class ZookeeperLockTemporaryOrder extends ZookeeperAbstractLock {
     @Override
     public void waitLock() {
         IZkDataListener listener = new IZkDataListener() {
-
             public void handleDataDeleted(String dataPath) throws Exception {
 
                 if(countDownLatch!=null){
                     countDownLatch.countDown();
                 }
             }
-
             public void handleDataChange(String dataPath, Object data) throws Exception {
 
             }

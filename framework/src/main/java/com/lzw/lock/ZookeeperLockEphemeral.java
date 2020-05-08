@@ -9,7 +9,7 @@ import java.util.concurrent.CountDownLatch;
  * @Date: 2020/5/8 15
  * @Description:
  */
-public class ZookeeperLockTemporary extends ZookeeperAbstractLock {
+public class ZookeeperLockEphemeral extends ZookeeperAbstractLock {
 
     private CountDownLatch countDownLatch = null;
 
@@ -28,7 +28,6 @@ public class ZookeeperLockTemporary extends ZookeeperAbstractLock {
     @Override
     public void waitLock() {
         IZkDataListener izkDataListener = new IZkDataListener() {
-
             public void handleDataDeleted(String path) throws Exception {
                 // 唤醒被等待的线程
                 if (countDownLatch != null) {
@@ -36,12 +35,10 @@ public class ZookeeperLockTemporary extends ZookeeperAbstractLock {
                 }
             }
             public void handleDataChange(String path, Object data) throws Exception {
-
             }
         };
         // 注册事件
         zkClient.subscribeDataChanges(PATH, izkDataListener);
-
         //如果节点存
         if (zkClient.exists(PATH)) {
             countDownLatch = new CountDownLatch(1);
