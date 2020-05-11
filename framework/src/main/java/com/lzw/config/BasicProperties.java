@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.MutablePropertySources;
 import org.springframework.core.env.PropertySource;
-import org.springframework.web.context.support.StandardServletEnvironment;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -26,21 +25,21 @@ public class BasicProperties {
             protocol = "https";
         }
         Collection<String> applicationConfigs = Sets.newHashSet();
-        if (environment instanceof StandardServletEnvironment) {
-            StandardServletEnvironment standardServletEnvironment = (StandardServletEnvironment)environment;
-            MutablePropertySources mutablePropertySources = standardServletEnvironment.getPropertySources();
-            if (mutablePropertySources != null) {
-                Iterator propertySources = mutablePropertySources.iterator();
-
-                while(propertySources.hasNext()) {
-                    PropertySource propertySource = (PropertySource)propertySources.next();
-                    String configName = propertySource.getName();
-                    if (configName.startsWith("applicationConfig")) {
-                        applicationConfigs.add(configName);
-                    }
-                }
-            }
-        }
+//        if (environment instanceof StandardServletEnvironment) {
+//            StandardServletEnvironment standardServletEnvironment = (StandardServletEnvironment)environment;
+//            MutablePropertySources mutablePropertySources = standardServletEnvironment.getPropertySources();
+//            if (mutablePropertySources != null) {
+//                Iterator propertySources = mutablePropertySources.iterator();
+//
+//                while(propertySources.hasNext()) {
+//                    PropertySource propertySource = (PropertySource)propertySources.next();
+//                    String configName = propertySource.getName();
+//                    if (configName.startsWith("applicationConfig")) {
+//                        applicationConfigs.add(configName);
+//                    }
+//                }
+//            }
+//        }
         log.info("\n----------------------------------------------------------\n\tEcloudApplication '{}' is running! Access URLs:\n\tLocal: \t\t{}://localhost:{}\n\tExternal: \t{}://{}:{}\n\tProfile(s): \t{}\n\tConfig(s): \t{}\n----------------------------------------------------------", new Object[]{environment.getProperty("spring.application.name"), protocol, environment.getProperty("server.port"), protocol, InetAddress.getLocalHost().getHostAddress(), environment.getProperty("server.port"), getActiveProfiles(environment), applicationConfigs});
     }
 
