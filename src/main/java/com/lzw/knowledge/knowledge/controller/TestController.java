@@ -6,4 +6,5 @@ package com.lzw.knowledge.knowledge.controller;
 *
 **/
 public class TestController {
+
 }

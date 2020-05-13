@@ -6,6 +6,7 @@
 	<modules>
 		<module>framework</module>
 		<module>framework-core</module>
+		<module>gateway</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
