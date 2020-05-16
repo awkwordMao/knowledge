@@ -1,9 +1,15 @@
 spring:
   application:
     name: gateway
-  cloud:
-    nacos:
-      config:
-        access-key:
+  rabbitmq:
+     host: 47.104.25.22
+     port: 5672
+     username: guest
+     passsword: guest
+     virtualHost: /
+  data:
+    mongodb:
+      uri:  mongodb://@47.104.25.22:27017
+      database: microservice_cms
 server:
   port: 9090
