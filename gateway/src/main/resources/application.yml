@@ -9,7 +9,6 @@ spring:
      virtualHost: /
   data:
     mongodb:
-      uri:  mongodb://@47.104.25.22:27017
-      database: microservice_cms
+      uri: mongodb://47.104.25.22:27017/microservice_cms
 server:
   port: 9090
