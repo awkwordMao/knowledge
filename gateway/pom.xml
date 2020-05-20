@@ -37,16 +37,57 @@
 
 		<!--引入framework-core-->
 		<dependency>
-			<groupId>com.lzw.knowledge</groupId>
+			<groupId>com.lzw</groupId>
 			<artifactId>framework-core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<!--引入framework-->
 		<dependency>
-			<groupId>com.lzw.knowledge</groupId>
-			<artifactId>framework</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+			<optional>true</optional>
 		</dependency>
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!--引入framework-->
+		<!--<dependency>-->
+			<!--<groupId>com.lzw.knowledge</groupId>-->
+			<!--<artifactId>framework</artifactId>-->
+			<!--<version>0.0.1-SNAPSHOT</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>com.lzw</groupId>-->
+			<!--<artifactId>swagger</artifactId>-->
+			<!--<version>0.0.1-SNAPSHOT</version>-->
+		<!--</dependency>-->
+
+		<!--<dependency>-->
+			<!--<groupId>com.alibaba.cloud</groupId>-->
+			<!--<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>com.alibaba.cloud</groupId>-->
+			<!--<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>-->
+		<!--</dependency>-->
+		<!--springboot集成nacos-->
+		<!--<dependency>-->
+			<!--<groupId>com.alibaba.boot</groupId>-->
+			<!--<artifactId>nacos-discovery-spring-boot-starter</artifactId>-->
+			<!--<version>0.2.3</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>com.alibaba.boot</groupId>-->
+			<!--<artifactId>nacos-config-spring-boot-starter</artifactId>-->
+			<!--<version>0.2.3</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>com.alibaba.nacos</groupId>-->
+			<!--<artifactId>nacos-client</artifactId>-->
+			<!--<version>1.2.0</version>-->
+		<!--</dependency>-->
+
 	</dependencies>
 
 	<build>

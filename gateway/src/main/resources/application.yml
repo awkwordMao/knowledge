@@ -10,5 +10,9 @@ spring:
   data:
     mongodb:
       uri: mongodb://47.104.25.22:27017/microservice_cms
+  security:
+    user:
+      name: admin
+      password: admin
 server:
   port: 9090

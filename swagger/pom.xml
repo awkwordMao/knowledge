@@ -60,6 +60,11 @@
 			<artifactId>springfox-spring-web</artifactId>
 			<version>RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>com.lzw</groupId>
+			<artifactId>framework-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -1,6 +1,7 @@
 package com.lzw.gateway.gateway.controller;
 
 import com.lzw.framework.common.ResultInfo;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 * @date 2020/5/13 16:35
 *
 **/
+@Api("测试")
 @RestController
+@RequestMapping("/api")
 public class TestController {
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
