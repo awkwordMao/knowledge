@@ -51,6 +51,14 @@
 			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 		<!--引入framework-->
 		<!--<dependency>-->
 			<!--<groupId>com.lzw.knowledge</groupId>-->

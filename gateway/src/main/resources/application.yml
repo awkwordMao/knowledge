@@ -14,5 +14,21 @@ spring:
     user:
       name: admin
       password: admin
+  cloud:
+    gateway:
+      default-filters:
 server:
   port: 9090
+#Spring Cloud Gateway 提供了 Endpoint 端点，暴露路由信息，有获取所有路由、刷新路由、查看单个路由、删除路由等方法，
+#源码在 org.springframework.cloud.gateway.actuate.GatewayControllerEndpoint 中，想访问端点中的方法需要添加
+#spring-boot-starter-actuator 注解，并在配置文件中暴露所有端点
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
