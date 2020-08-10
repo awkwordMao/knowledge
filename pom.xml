@@ -7,6 +7,7 @@
 		<module>framework</module>
 		<module>framework-core</module>
 		<module>gateway</module>
+		<module>mytask</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -46,6 +47,7 @@
 	</dependencyManagement>
 
 
+
 	<dependencies>
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -58,11 +60,11 @@
 			<version>2.2.2</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.5</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.apache.commons</groupId>-->
+			<!--<artifactId>commons-lang3</artifactId>-->
+			<!--<version>3.5</version>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -75,6 +77,26 @@
 			<version>0.10</version>
 		</dependency>
 	</dependencies>
+
+	<!--<repositories>-->
+		<!--&lt;!&ndash;<repository>&ndash;&gt;-->
+		<!--&lt;!&ndash;<id>spring-milestones</id>&ndash;&gt;-->
+		<!--&lt;!&ndash;<name>Spring Milestones</name>&ndash;&gt;-->
+		<!--&lt;!&ndash;<url>https://repo.spring.io/libs-milestone</url>&ndash;&gt;-->
+		<!--&lt;!&ndash;</repository>&ndash;&gt;-->
+		<!--<repository>-->
+			<!--<id>nexus</id>-->
+			<!--&lt;!&ndash;<name>nexus maven</name>&ndash;&gt;-->
+			<!--&lt;!&ndash;<url>http://192.168.169.169:8081/repository/maven-public/</url>&ndash;&gt;-->
+			<!--<url>http://192.168.169.169:8081/repository/maven-public/</url>-->
+			<!--<releases>-->
+				<!--<enabled>true</enabled>-->
+			<!--</releases>-->
+			<!--<snapshots>-->
+				<!--<enabled>true</enabled>-->
+			<!--</snapshots>-->
+		<!--</repository>-->
+	<!--</repositories>-->
 
 	<build>
 		<plugins>
