@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>knowledge</artifactId>
+        <groupId>com.lzw.knowledge</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>lzw-quartz</artifactId>
+
+    <properties>
+        <author.name>lijie</author.name>
+    </properties>
+
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <!--filtering表示需要过滤-->
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <!--先过滤，表示要包含a.properties，即要替换其中的${javaname}变量-->
+                <includes>
+                    <include>a.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <!--不过滤，要排除a.properties，即除了a.properties要替换变量之外，
+                别的都不用替换，保留即可，如果不加改标签的话，
+                除a.properties之外的配置文件都不会被打包-->
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>a.properties</exclude>
+                </excludes>
+            </resource>
+        </resources>
+    </build>
+
+</project>
